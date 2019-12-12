@@ -1,0 +1,15 @@
+a {
+    @apply no-underline text-pink-500 transition;
+
+    &:hover {
+        @apply text-purple-900;
+    }
+}
+
+/* don't hide from screen readers */
+.visually-hidden {
+    @apply m-0 p-0 absolute whitespace-no-wrap overflow-hidden h-auto;
+    border: 0;
+    clip: rect(0 0 0 0);
+    width: 1px;
+}

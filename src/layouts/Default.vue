@@ -1,15 +1,24 @@
 <template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
+  <div>
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <div id="wrapper" class="wrapper pb-16 md:pb-0 flex flex-col relative min-h-screen">
+
+      <HeaderPartial/>
+
+
+      <main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20">
+        <slot/>
+      </main>
+
+      <FooterPartial/>
+        
+    </div>
+
+    <ClientOnly>
+    <ResponsiveNav/>
+    </ClientOnly>
+    
   </div>
 </template>
 
@@ -21,30 +30,18 @@ query {
 }
 </static-query>
 
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
+<script>
+import HeaderPartial from '~/layouts/partials/Header.vue'
+import FooterPartial from '~/layouts/partials/Footer.vue'
+import ResponsiveNav from '~/layouts/partials/ResponsiveNav.vue'
 
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+export default {
+  components: {
+    HeaderPartial,
+    FooterPartial,
+    ResponsiveNav
+  }
 }
+</script>
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>
+<style src="~/resources/scss/main.css"></style>

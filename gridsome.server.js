@@ -6,6 +6,17 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
+
+  api.onCreateNode(options => {
+    if (options.internal.typeName === 'Blog') {
+      
+      options.tags = (typeof options.tags === 'string') ? options.tags.split(',').map(string => string.trim()) : options.tags;
+      return {
+        ...options
+      };
+    }
+  })
+
   api.loadSource(({ addCollection }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
   })
