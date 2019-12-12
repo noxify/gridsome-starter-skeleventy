@@ -26,9 +26,7 @@ module.exports = {
         typeName: 'Blog',
         path: './content/blog/**/*.md',
         refs: {
-          // Reference to existing authors by id.
           author: 'Author',
-          // Create a Tag content type and its nodes automatically.
           tags: {
             typeName: 'Tag',
             create: true
@@ -49,6 +47,10 @@ module.exports = {
     Category: [{
       path: '/category/:title',
       component: './src/templates/Category.vue'
+    }],
+    Tag: [{
+      path: '/tag/:title',
+      component: './src/templates/Tag.vue'
     }]
   },
   chainWebpack: config => {
