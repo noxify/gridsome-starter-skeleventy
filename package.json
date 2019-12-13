@@ -12,11 +12,13 @@
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome": "^0.7.0",
     "gridsome-source-static-meta": "noxify/gridsome-source-static-meta#master",
-    "tailwindcss": "^1.1.4",
     "node-sass": "^4.13.0",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
     "prism-themes": "^1.3.0",
     "sass-loader": "^8.0.0"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^2.2.27"
   }
 }

@@ -43,5 +43,3 @@ export default {
   }
 }
 </script>
-
-<style src="~/resources/scss/main.css"></style>
