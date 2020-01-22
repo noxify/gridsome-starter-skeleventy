@@ -1,5 +1,6 @@
 a {
-    @apply no-underline text-pink-500 transition;
+    @apply no-underline text-pink-500;
+    transition: 0.25s all ease-out;
 
     &:hover {
         @apply text-purple-900;

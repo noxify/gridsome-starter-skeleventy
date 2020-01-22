@@ -3,9 +3,6 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-
-//import '~/resources/js/main.js'
-
 import '~/resources/scss/main.scss'
 
 export default function (Vue, { router, head, isClient }) {

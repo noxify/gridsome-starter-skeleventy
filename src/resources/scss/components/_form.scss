@@ -28,7 +28,8 @@
 
     .input,
     .textarea {
-        @apply border border-gray-200 rounded p-3 w-full transition;
+        @apply border border-gray-200 rounded p-3 w-full;
+        transition: 0.25s all ease-out;
 
         &:focus {
             @apply border-pink-500 outline-none;

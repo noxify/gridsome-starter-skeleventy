@@ -3,6 +3,7 @@
     <nav
       id="mobile-nav"
       class="mobile-nav fixed left-0 top-0 h-screen w-full overflow-y-auto pt-12 bg-purple-900 z-50 md:hidden"
+      :class="toggleNav ? 'menu-visible': ''"
     >
       <ul>
         <li
@@ -23,8 +24,10 @@
     <button
       id="mobile-nav-toggle"
       class="mobile-nav-toggle block fixed h-16 w-full bottom-0 flex items-center justify-center font-bold border-none bg-purple-900 text-white z-50 focus:outline-none md:hidden"
+      :class="toggleNav ? 'menu-toggle-active': ''"
       aria-expanded="false"
       aria-controls="mobile-nav"
+      @click="toggle"
     >
       <span class="mobile-nav-label mr-2 font-medium">Menu</span>
 
@@ -49,11 +52,20 @@ query {
 </static-query>
 
 <script>
-
+let myBody = {
+  classList : {}
+};
 export default {
 
-  mounted() {
-    require('@modules/mobile-nav');
+  data() {
+    return {
+      toggleNav: false
+    }
+  },
+  methods: {
+    toggle() {
+      this.toggleNav = !this.toggleNav
+    }
   }
 
 }
