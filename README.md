@@ -1,3 +1,6 @@
+> **We have moved the Repository to https://github.com/jammeryhq**
+> * https://github.com/jammeryhq/gridsome-starter-skeleventy
+
 # Gridsome Skeleventy Starter
 
 ## Credits
